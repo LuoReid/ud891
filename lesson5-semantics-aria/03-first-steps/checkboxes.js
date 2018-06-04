@@ -34,16 +34,18 @@
   };
 
   Checkbox.prototype.toggle = function() {
+    this.el.setAttribute('role','checkbox');
     if (this.el.hasAttribute('checked')) {
       this.el.removeAttribute('checked');
 
       // Hmm.
+      this.el.setAttribute('aria-checked','false');
 
     } else {
       this.el.setAttribute('checked', '');
 
       // Hmmmmm.
-
+      this.el.setAttribute('aria-checked','true');
     }
   };
 
